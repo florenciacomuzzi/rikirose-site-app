@@ -7,7 +7,12 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
+import React from "react";
+import {Coverphoto} from "./components/coverphoto";
+import Image from "next/image";
 // import {Params} from "next/dist/server/request/params";
+import coverPhoto from './public/coverphoto.png'
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -64,6 +69,8 @@ export default async function RootLayout({
     >
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+          <Coverphoto />
+        <Image src={coverPhoto} alt={"fdg"}  />
           <Navbar />
           {children}
           <Footer />

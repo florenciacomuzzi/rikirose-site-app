@@ -10,11 +10,11 @@ const navItems = {
   '/about': {
     name: 'about',
   },
-    'https://rikirose.com': {
+    '/music': {
     name: 'music',
   },
-  '/performances': {
-    name: 'performances',
+  '/events': {
+    name: 'events',
   },
   '/contact': {
     name: 'contact',
