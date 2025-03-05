@@ -2,6 +2,9 @@ import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
+import {Locale} from "next/dist/compiled/@vercel/og/satori";
+import {Metadata} from "next";
+import {Params} from "next/dist/server/request/params";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -11,10 +14,15 @@ export async function generateStaticParams() {
   }))
 }
 
-export function generateMetadata({ params }) {
+export async function generateMetadata(props: { params: Params }): Promise<Metadata> {
+  const params = await props.params;
+  const { lang } = params;
+// export function generateMetadata({ params }) {
   let post = getBlogPosts().find((post) => post.slug === params.slug)
   if (!post) {
-    return
+    // return
+    return {
+      title: 'Not Found',}
   }
 
   let {
@@ -52,7 +60,10 @@ export function generateMetadata({ params }) {
 }
 
 export default function Blog({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug)
+  // TODO: Error: Route "/blog/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+  const { slug } = params; // Destructure params properly
+
+  let post = getBlogPosts().find((post) => post.slug === slug)
 
   if (!post) {
     notFound()
@@ -74,7 +85,7 @@ export default function Blog({ params }) {
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
+            url: `${baseUrl}/blog/${slug}`,
             author: {
               '@type': 'Person',
               name: 'My Portfolio',
