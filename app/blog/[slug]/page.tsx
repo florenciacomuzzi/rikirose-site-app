@@ -4,7 +4,7 @@ import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
 import {Locale} from "next/dist/compiled/@vercel/og/satori";
 import {Metadata} from "next";
-import {Params} from "next/dist/server/request/params";
+// import {Params} from "next/dist/server/request/params";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -14,9 +14,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata(props: { params: Params }): Promise<Metadata> {
-  const params = await props.params;
-  const { lang } = params;
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  // const params = await params;
+  // const { lang } = params;
 // export function generateMetadata({ params }) {
   let post = getBlogPosts().find((post) => post.slug === params.slug)
   if (!post) {

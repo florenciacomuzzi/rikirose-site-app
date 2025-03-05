@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
-import {Params} from "next/dist/server/request/params";
+// import {Params} from "next/dist/server/request/params";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -49,7 +49,8 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Params;
+  // params: Params;
+  params: { lang?: string }; // Define params explicitly;
 }) {
   const { lang } = await params;
   return (
