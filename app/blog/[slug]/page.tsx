@@ -63,7 +63,7 @@ interface BlogProps {
   params: { slug: string };
 }
 
-export default function Blog({ params }: BlogProps) {
+export default function Blog({ params }: { params: { slug: string } }) {
   // TODO: Error: Route "/blog/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
   const { slug } = params; // Destructure params properly
 
