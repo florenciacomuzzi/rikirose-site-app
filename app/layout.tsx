@@ -12,6 +12,7 @@ import {Coverphoto} from "./components/coverphoto";
 import Image from "next/image";
 // import {Params} from "next/dist/server/request/params";
 import coverPhoto from './public/coverphoto.png'
+import WidgetIframe from "./components/shotgun";
 
 
 export const metadata: Metadata = {
@@ -79,6 +80,7 @@ export default async function RootLayout({
           <Image src={coverPhoto} alt={"fdg"} className={"mx-auto w-full pl-1"}  />
           <Navbar />
           {children}
+          <WidgetIframe />
           <Footer />
           <Analytics />
           <SpeedInsights />
