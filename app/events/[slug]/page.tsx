@@ -94,7 +94,7 @@ export default function Blog({ params }: BlogProps) {
             url: `${baseUrl}/blog/${slug}`,
             author: {
               '@type': 'Person',
-              name: 'My Portfolio',
+              name: 'My Events',
             },
           }),
         }}
