@@ -54,7 +54,7 @@ export function Navbar() {
             })}
           </div>
                 {/* Centered Text */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 text-lg font-semibold font-[Pacifico]">
+              <div className="absolute left-1/2 transform -translate-x-1/2 text-lg font-semibold font-[Pacifico] whitespace-nowrap md:text-xl">
                 Riki Rose
               </div>
 
