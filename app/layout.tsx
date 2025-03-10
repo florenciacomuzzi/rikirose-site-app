@@ -67,16 +67,23 @@ export default async function RootLayout({
         GeistMono.variable
       )}
     >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+      {/*<body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">*/}
+      {/*<body className="h-screen w-full flex flex-col items-center">*/}
+      <body className="h-screen w-full flex justify-center">
+        {/* Wrapper to center content */}
+        <div className="w-full max-w-7xl flex flex-col">
+        {/*<main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">*/}
+        <main className="w-full max-w-7xl flex flex-col px-4 md:px-8">
           <Coverphoto />
-        <Image src={coverPhoto} alt={"fdg"}  />
+        {/*<Image src={coverPhoto} alt={"fdg"} className={"mx-auto w-full max-w-4xl"}  />*/}
+        <Image src={coverPhoto} alt={"fdg"} className={"mx-auto w-full"}  />
           <Navbar />
           {children}
           <Footer />
           <Analytics />
           <SpeedInsights />
         </main>
+        </div>
       </body>
     </html>
   )
