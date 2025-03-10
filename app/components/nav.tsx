@@ -36,7 +36,8 @@ export function Navbar() {
         {/*  id="nav"*/}
         {/*>*/}
           <nav
-          className="flex flex-row justify-between items-center px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+          // className="flex flex-row justify-between items-center px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+          className="relative flex flex-wrap justify-between items-center px-4 pb-2 fade md:overflow-auto scroll-pr-6 md:relative w-full"
           id="nav"
           >
           <div className="flex flex-row space-x-4 pl-2">
