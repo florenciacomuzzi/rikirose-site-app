@@ -52,6 +52,12 @@ export function Navbar() {
               )
             })}
           </div>
+                {/* Centered Text */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 text-lg font-semibold font-[Pacifico]">
+                Riki Rose
+              </div>
+
+
                     {/* Social Media Links */}
           <div className="flex space-x-4 pr-2">
             {socialLinks.map(({ href, icon, label }) => (

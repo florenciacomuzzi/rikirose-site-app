@@ -75,8 +75,8 @@ export default async function RootLayout({
         {/*<main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">*/}
         <main className="w-full max-w-7xl flex flex-col px-4 md:px-8">
           <Coverphoto />
-        {/*<Image src={coverPhoto} alt={"fdg"} className={"mx-auto w-full max-w-4xl"}  />*/}
-        <Image src={coverPhoto} alt={"fdg"} className={"mx-auto w-full"}  />
+          {/*<Image src={coverPhoto} alt={"fdg"} className={"mx-auto w-full max-w-4xl"}  />*/}
+          <Image src={coverPhoto} alt={"fdg"} className={"mx-auto w-full pl-1"}  />
           <Navbar />
           {children}
           <Footer />
