@@ -17,13 +17,13 @@ import coverPhoto from './public/coverphoto.png'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Riki Rose',
+    template: '%s | Riki Rose',
   },
-  description: 'This is my portfolio.',
+  description: 'Explore the world of Riki Rose.',
   openGraph: {
     title: 'Riki Rose',
-    description: 'This is my portfolio.',
+    description: 'Explore the world of Riki Rose.',
     url: baseUrl,
     siteName: 'Riki Rose',
     locale: 'en_US',
