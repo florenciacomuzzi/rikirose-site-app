@@ -19,7 +19,7 @@
   --sh-entity: #e25a1c;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark),(max-width: 768px) {
   :root {
     --sh-class: #4c97f8;
     --sh-identifier: white;
@@ -28,6 +28,11 @@
   }
   html {
     color-scheme: dark;
+  }
+  #nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
   }
 }
 
